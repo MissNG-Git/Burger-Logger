@@ -1,0 +1,61 @@
+<div class="container" id="container1">
+    <img src="../public/assets/img/pandaBurger.jpg" alt="Panda Burger" />
+    <h1>Eat-Da-Burger!</h1>
+    <h2>Burger logger for blogging, vlogging and motivation for jogging 🏃‍♀️</h2>
+</div>
+
+<div class="container" id="container2">
+    <div class="row" id="row1">
+        <div class="col-md-6">
+            <h3>Burgers awaiting consumption!</h3>
+            <ul>
+                {{#each Burgers}}
+                {{#unless devour}}
+                {{> Burgers/Burger-block devoured=true}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Burgers devoured!</h3>
+            <ul>
+                {{#each Burgers}}
+                {{#if devour}}
+                {{> Burgers/Burger-block devoured=false}}
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row" id="row2">
+        <div class="col-md-12">
+            <h2>Burger 'Bucket List'</h2>
+            <form id="create-form">
+                <div class="form-group">
+                    <label for="bu">Burger Name:</label>
+                    <input type="text" id="bu" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="devour">Devour Status</label><br>
+                    <input type="radio" name="devour" value="1" checked id="devour"> Already devoured!<br>
+                    <input type="radio" name="devour" value="0" id="consume"> Awaiting consumption...
+                </div>
+                <button type="submit">Add Burger!</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="foot-box">
+        <div class="text-muted">
+            <p>
+                Copyright © 2020 <strong><a href="https://github.com/MissNG-Git"
+                        class="footer-ref">MissNG</a></strong><br>
+                All Rights Reserved
+            </p>
+        </div>
+    </div>
+</footer>
