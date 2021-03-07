@@ -6,7 +6,13 @@ const router = express.Router();
 const burger = require("../models/burger");
 
 router.get("/", (req, res) => {
-  // selectAll()
+  burger.all((data) => {
+    var hbsObject = {
+      burgers: data,
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
 });
 
 router.post("/api/burgers", (req, res) => {
