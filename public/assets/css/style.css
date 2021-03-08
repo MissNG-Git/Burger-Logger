@@ -16,14 +16,14 @@ body {
 }
 
 h1,
-h2,
+.bucket-list,
 #heading,
 #container2 {
   padding: 10px;
 }
 
 h1,
-h3 {
+h2 {
   font-family: "Ribeye Marrow", cursive;
 }
 
@@ -67,8 +67,23 @@ h1 {
   font-family: "Nunito", sans-serif;
 }
 
+li {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.change-devoured,
+.delete-burger {
+  font-size: large;
+}
+
 button {
   margin: 5px;
+  border-radius: 5px;
+}
+
+#row3 {
+  font-size: large;
 }
 
 .wrapper {
