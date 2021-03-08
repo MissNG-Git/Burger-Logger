@@ -18,9 +18,9 @@
                 <div class="col-md-6">
                     <h3>🍽️ Burgers awaiting consumption...</h3>
                     <ul>
-                        {{#each Burgers}}
+                        {{#each burgers}}
                         {{#unless devoured}}
-                        {{> Burgers/Burger-block devour=true}}
+                        {{> burgers/burger-block devour=true}}
                         {{/unless}}
                         {{/each}}
                     </ul>
@@ -29,9 +29,9 @@
                 <div class="col-md-6">
                     <h3>Burgers devoured! 🍔😋</h3>
                     <ul>
-                        {{#each Burgers}}
+                        {{#each burgers}}
                         {{#if devoured}}
-                        {{> Burgers/Burger-block devour=false}}
+                        {{> burgers/burger-block devour=false}}
                         {{/if}}
                         {{/each}}
                     </ul>
@@ -47,7 +47,7 @@
                             <input type="text" id="bu" name="name">
                         </div>
                         <div class="form-group" id="status">
-                            <label class="status-text" for="devoured"><u>STATUS:</u></label><br>
+                            <label for="devoured" class="status-text"><u>STATUS:</u></label><br>
                             <input type="radio" name="devoured" value="1" id="devoured" checked> Already devoured!<br>
                             <input type="radio" name="devoured" value="0" id="consume"> Awaiting consumption...
                         </div>
