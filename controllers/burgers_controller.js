@@ -1,6 +1,5 @@
 const express = require("express");
 
-// This sets up the router middleware
 const router = express.Router();
 
 const burger = require("../models/burger");
