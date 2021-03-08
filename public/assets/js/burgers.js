@@ -1,4 +1,10 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
+document.addEventListener("DOMContentLoaded", (event) => {
+  if (event) {
+    console.info("DOM loaded");
+  }
+});
+
 // CRUD!!!
 
 // UPDATE
@@ -8,11 +14,38 @@
 // Reload the page so the user can see the new quote
 
 // CREATE
-// Grabs the value of the textarea that goes by the name, "quote"
-// Send POST request to create a new quote
-// make sure to serialize the JSON body
-// Empty the form
-// Reload the page so the user can see the new quote
+const createBurgerBtn = document.getElementById("create-form");
+
+if (createBurgerBtn) {
+  createBurgerBtn.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Grabs the value of the textarea that goes by the name, "quote"
+    const newBurger = {
+      name: document.getElementById("bu").value.trim(),
+      devoured: document.getElementById("devoured").checked,
+    };
+
+    // Send POST request to create a new quote
+    fetch("/api/burgers", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+
+      // make sure to serialize the JSON body
+      body: JSON.stringify(newBurger),
+    }).then(() => {
+      // Empty the form
+      document.getElementById("bu").value = "";
+
+      // Reload the page so the user can see the new quote
+      console.log("New burger added!");
+      location.reload();
+    });
+  });
+}
 
 // DELETE
 // Set up the event listeners for each delete button
