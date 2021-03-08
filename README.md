@@ -48,7 +48,7 @@ An image showing the web application's appearance and functionality:
 ### ≫ ──── ≪•◦ Usability ◦•≫ ──── ≪
 
 - Navigate to deployed application page on [Heroku](https://burglog-00.herokuapp.com)
-- Enter burger name in blank field under /_~Burger 'Bucket List'~/_
+- Enter burger name in blank field under "Burger 'Bucket List'"
 - Select desired burger "STATUS"
 - Click on "Add Burger!"
 - Burger will display either on the left (awaiting consumption) or the right (devoured) column depending on what "STATUS" was selected
